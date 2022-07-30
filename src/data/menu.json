@@ -1,0 +1,22 @@
+{
+  "data": [ 
+        {
+          "title": "Produits", "icon": "inbox", "type": "sub", "badgeType": "primary", "active": false, "children": [
+            { "path": "/ajouter-produit", "title": "Ajouter", "type": "link" },          
+            { "path": "/produits", "title": "Lister", "type": "link" }
+          ]
+        },
+        {
+          "title": "Contacts", "icon": "users", "type": "sub", "badgeType": "primary", "active": false, "children": [
+            { "path": "/ajouter-contact", "title": "Ajouter", "type": "link" },          
+            { "path": "/contacts", "title": "Lister", "type": "link" }
+          ]
+        },
+        {
+          "title": "Commandes", "icon": "shopping-cart", "type": "sub", "badgeType": "primary", "active": false, "children": [
+            { "path": "/ajouter-commande", "title": "Ajouter", "type": "link" },          
+            { "path": "/commandes", "title": "Lister", "type": "link" }
+          ]
+        }
+      ]
+}
