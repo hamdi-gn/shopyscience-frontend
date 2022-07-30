@@ -325,6 +325,27 @@ import axios from 'axios'
           this.$bvModal.hide('edit-modal')
         })
       },
+      async PutProduit_2() {
+        await axios.put(`https://shopyscience.herokuapp.com/items/${this.selected.Item}/`,
+        {
+          Item: this.Produit.Item,
+          Amount: this.Produit.Amount,
+          Description: this.Produit.Description,
+          Discount: this.Produit.Discount,
+          ItemDescription: this.Produit.ItemDescription,
+          Quantity: Number(this.Produit.Quantity-this.OrdredProduit.Quantity),
+          UnitCode: this.Produit.UnitCode,
+          UnitDescription: this.Produit.UnitDescription,
+          UnitPrice: this.Produit.UnitPrice,
+          VATAmount: this.Produit.VATAmount,
+          VATPercentage: this.Produit.VATPercentage,
+        }, 
+        {
+          headers:{
+            Authorization: `Token ${localStorage.getItem('access_token')}`,
+          },
+        })
+      },
       async DeleteProduit() {
         await axios.delete(`https://shopyscience.herokuapp.com/items/${this.selected.Item}/`, 
         {
@@ -359,6 +380,7 @@ import axios from 'axios'
           },
         })
         .then(() => {
+          this.PutProduit_2()
           this.HideOrderModal()
           this.OrdredProduit.Quantity = 0
         })
